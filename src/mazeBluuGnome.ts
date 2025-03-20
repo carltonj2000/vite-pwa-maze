@@ -11,13 +11,13 @@ export const rawHtml = /*html*/ `
 	</h1>
 
 
-	<h1 class="h_Canyoneer-TR_Cannyon-name-rate-loc">
+	<h2 class="h_Canyoneer-TR_Cannyon-name-rate-loc">
 												
 	Ice Cube Canyon (The Maze) - 4B IV<br>
 		Red Rock Canyon, Nevada   
 												
 
-	</h1>
+	</h2>
 		
 	<details open={true}>
 	<summary><strong><span style="background-color:aqua">Click to show / expand the list of waypoints below........</span></strong></summary>
