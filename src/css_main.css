@@ -1,0 +1,463 @@
+﻿
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+/*                                This section is for general - global CSS rules                                 */
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+body{
+/*For some reason applying styles here to the body make IE do wierd things. Don't apply rules here, instead use div_wrap-all section */
+}
+
+#div_wrap-all{
+/*Applying styles to the body has unexpected resultsin IE. I will apply global styles here instead.*/
+font-size:medium; /*Sets the base size of text etc throughout the web site*/
+font-family:"Times New Roman", Times, serif; /*Chose this set since they are considered web safe fonts.*/
+background-color:#ffffff;
+margin:0px;
+}
+
+/*The general size of things in relation to what default is, it can be adjusted here*/
+h1{
+font-size:190%; /*Sizes are set relative to the font size set in the div element above.*/
+}
+
+h2{
+font-size:170%;
+}
+
+h3{
+font-size:150%;
+}
+
+h4{
+font-size:130%;
+}
+
+h5{
+font-size:120%;
+}
+
+h6{
+font-size:110%;
+}
+
+.section-header{
+background-color:#4F7AFF;
+width:400px;
+color:#ffffff;
+padding:8px;
+}
+
+
+p{font-size:100%;}
+/*Sizes can be set for eny element on the site by adding rules with a font-size and a percent above here.*/
+
+/*Top header for every page, usually an h1*/
+.h_general_main_title{
+color: #00286E;
+text-align: center;
+margin-top: 0px;
+margin-bottom: 0px;
+font-size:210%;
+}
+
+.p_general {
+margin-left: 15px;	
+}
+	
+.p_general-indent{
+	margin-left: 40px;
+	color: #000000;
+}
+
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+/*     This section is for the major containing divs and associated backgrounds, logos navigation and sizing       */
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+
+/*  This banner div contains things that are at the top of the page in the banner area.    */
+/*  Things like the site logo, navigaqtion or advertising (if I ever add advertising) etc. */
+#div_banner{
+margin:0px auto;
+}
+
+/*  The logo div is a sub div inside the banner div.   */
+#div_logo{
+margin: 15px 0px; /*Top and bottom, then right and left*/
+
+text-align: center; /*aligned to center screen at all times.*/
+}
+
+#img_bg_header_logo{
+}	
+
+/*the image used for the home link is 75px wide*/
+#img_bg_header_link-home{
+margin:0px;
+border:none;
+}	
+
+/*the image used for the contact link is 75px wide*/	
+#img_bg_header_link-contact{
+margin:0px;
+border:none;
+}	
+
+.TextInput{
+background: #FFFF99 
+}
+
+#div_bar-below-logo, #div_bar-above-logo{
+background:#2C508E;
+text-align: center; /*aligned to center screen at all times.*/
+padding:20px 10px; /*Top and bottom, then right and left*/
+margin:0px 0px;   /*Top and bottom, then right and left*/
+}
+
+/*  Styling the navigation menu divs  */
+#div-nav-top-bar, #div-nav-bot-bar{
+display:inline-block;/*Allows the div to still be a block but behave like an inline element so the text align center in the containing div works*/
+}
+
+#ul-nav-top-bar, #ul-nav-bot-bar{
+margin:0px;/*Leave this set to 0.  Space around the list is done in the containting div
+list-style: none;/*Makes the list have no style so the bullets points go away.*/
+text-align:center;/*to center the items list items in the list*/
+font-size:80%; /*Changes the size of any text within the navigation area.*/
+font-weight:bold;/*Changes all text in the nav area to bold*/
+letter-spacing:1px;
+}
+
+#ul-nav-top-bar > li, #ul-nav-bot-bar > li{/*Effects only list items that are direct children of the list.  So sub lists are not effected by these rules.*/
+display:inline;/*Makes the list items line elements ratehr than the default block. note li can not use the inline-block mode.*/
+padding:0 10px;/*Note the top and bottom padding is set to zero but no other value works.  These have been set to inline elements so top and bottom padding have no effect*/
+text-transform:uppercase;
+color:#ffffff;
+}
+
+#ul-nav-top-bar > li > a, #ul-nav-bot-bar > li > a{/*Effects only links that are direct children of li items that are dierct children of the list.  links in sub menues are not effected.*/
+height:100%;/*to avoid issues with IE7 this also tells the links to occupy the entire hieght of the list items.*/
+text-decoration:none;
+color:#ffffff;/*should match the color set for the ul-nav li items*/
+}
+
+#ul-nav-top-bar > li > a:hover, #ul-nav-bot-bar > li > a:hover{/*Effects only links (when hovered over) that are direct children of li items that are dierct children of the list.  links in sub menues are not effected.*/
+color:#D87015;
+text-decoration:underline;
+}
+
+/*xx  Styling the sub menu items  */
+li.li-nav-sub{/*Effects only li items with a class of li-nav-sub*/
+position:relative; /*This sets a relavtive position so that the position styles for the ul list in these li items works.*/
+}
+
+li.li-nav-sub ul{/*Effects the ul lists that are in the sub list(s)*/
+width:250px;
+margin: 0;
+padding:0;
+list-style: none;
+background: #2C508E;/*color for the sub menues that drop down*/
+position:absolute;/*This positions the ul relative to its parent item in hthis case the li.li-nav-sub.*/
+						/*An absolute position element is positioned relative to the first parent element 
+						that has a position other than static. 
+						If no such element is found, the containing block is <html>:
+						So the parent element needs to have a possition other than static assigned to it for this to work.*/
+left:1px;/*For the absolute position to take effect some value for a right or left position needed to be specified.*/
+top: 15px;/*Note do not use a negative number for this as it may cause EW to hang.*/
+visibility:hidden;/*This hides the sub menu when not in use by changing the visibility to hidden.*/
+}
+
+#ul-nav-top-bar > li.li-nav-sub ul li, #ul-nav-bot-bar > li.li-nav-sub ul li{/*Effects the li items in the sub menu*/
+margin:10px 5px;
+}
+
+#ul-nav-top-bar > li.li-nav-sub ul li a, #ul-nav-bot-bar > li.li-nav-sub ul li a{/*Effects the links in the sub menus*/
+height: 100%;
+padding:2px;
+color: #fff;
+text-decoration: none;
+}
+
+#ul-nav-top-bar > li.li-nav-sub ul li a:hover, #ul-nav-bot-bar > li.li-nav-sub ul li a:hover{/*Effects the links in the sub menus when hovered on*/
+background: #F60;
+text-decoration: underline;
+}
+
+#ul-nav-top-bar > li.li-nav-sub:hover ul, #ul-nav-bot-bar > li.li-nav-sub:hover ul{
+top:12px;/*While hovering changes the top position of the sub lists to a value where sits lower down where it is positioned to be visible*/
+		/*If set too high the sub menu will sit too low and will not be able to be accessed with the cursor.*/
+visibility:visible;/*While hovering changes the visibility back to visible to show the sub menu.*/
+}
+
+#div-top-add{
+display:inline-block;/*Allows the div to still be a block but behave like an inline element so the text align center in the containing div works*/
+margin:4px auto;
+}
+
+#div-bot-add{
+clear:both; /*Clears the div of floats that were applied above it.*/
+margin:10px;
+text-align:center;
+}
+
+#div_content-outer-wrap{
+padding:0px;
+margin:0 auto; /* Right and left margins set to auto allow content to center.*/
+}
+
+/*  This div is nested inside the div_contnet-outer-wrap and contains all the page content,*/ 
+/*  Excpet for the page header which sits above the backround graffics*/
+/*  This sets the maximum width and margins for everything inside the content area in one shot.*/ 
+#div_content-inner-wrap {
+width:950px;
+margin:0 auto;
+padding:0px;
+}
+
+#div_content-footer{
+}
+
+a img {border: none; } /*Makes all images that are used as links to not show a border*/
+
+/*  These are rules for links in the content area navigation area.  */
+/*  These will be eliminated as well when the navigation is moved up top.*/
+.img_nav-link{
+border:none;
+margin:8px 20px
+}
+
+.img_bordered{
+border:25px black solid;
+}
+
+.img_bordered_float-right{
+border:20px black solid;
+float:right;
+}
+
+.img_bordered_float-left{
+border:20px black solid;
+float:left;
+}
+
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+/*     This section is to set up images with thier own captions and be able to float them right or left.         */
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+
+/*When adding images simlpy place the img tag inside a div or span tag with two classes assigned to it.
+A class of pic-and-caption to give background and border styles to the div or span,
+and a class of either right or left to float it in a direction.
+		SAMPLE CODE SNIPPET for what is added in the page 
+		<div  class="pic-and-caption right" style="width:50%">
+			<img alt="Example Pic." longdesc="Example Pic." src="../tz_images/177_Inferno_Matt-030.JPG" />
+			this is what will show as the caption.  It can be as long or short as you like.  
+			The text will wrap and the border will expand down to accommodate.
+		</div>*/
+
+/*This adds background and border etc to the div   */
+/*A div can not be placed inside a paragraph. so if I want it to flow with my paragraphs a span can be used in a p tag.*/
+/*The right or left classes below are also assigend to float the div right or left .*/
+/*The div being floated means it is taken out of the flow of the page so content following it can wrap */
+/*if this is undesired use an inline style on the paragraph following the div to clear the floats. */
+.pic-and-caption { /*These rules are for the div itself*/
+background-color:#F9F9F9;
+border:1px solid #CCCCCC; 
+padding:8px;
+font:11px/1.4em Arial, sans-serif; 
+width:50%; /* the width is set as 50% from the CSS here but can be overridden in the code by applying an inline style with a width of what % is desired. */
+display:block;/*Changes the display to block is for if you use a span the span can be treated as a block just like the div*/
+} 
+
+.pic-and-caption > img{  /* This applies the rules only to the image inside an element with a class of pic-and-caption */
+width:100%;  /* sets the width of the picture to 100% of the div it is contained in.  Don't change this. */
+border: 2px solid #CCCCCC;
+margin-bottom: 3px; /*  This spaces the caption a bit below the image. */	
+}
+
+.right{ /*Floats the div and image to the rihgt or left depending on which classs was used.*/
+margin: 0.5em 0.8em 0.5em 0.8em; 
+float:right;
+} 
+
+.left{ 
+margin: 0.5em 0.8em 0.5em 0.8em;
+float:left; 
+}
+
+
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+/*                           These styles are for trip report listing pages                                      */
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+.div_tr-listing {
+padding: 7px;
+margin:10px;
+margin-left: 40px;
+border: 3px blue solid;
+background-color:#eeeeee;
+}
+
+
+.div-dv-ethics-note {
+	background-color:#FFFFFF;
+border:2px black solid;
+}
+
+.h_tr-listing {
+margin:1px
+}
+
+.p_tr-listing {
+margin-left: 40px;
+}
+
+/*  These styles are for the regional information sections on the trip report listing page */
+.div_tr-listing-region_info {
+padding: 7px;
+margin-left: 130px;
+margin-right:15px;
+margin-top:20px;
+border:3px black solid;
+background-color:#dedede;
+}
+
+.div-amazon-route-desc-list{/*applies style to the div(s) that contain amazon stuff for sale on the route list pages.*/
+text-align:center;
+}
+
+.div-amazon-route-desc-list > iframe{/*applies style to the div(s) that contain amazon stuff for sale on the rout list pages.*/
+margin:5px;
+}
+
+.h_tr-listing-region_info{
+margin-bottom:0px;
+margin-top:0px;
+}
+
+.p_tr-listing-region_info {
+margin-top:0px;
+margin-bottom:10px;	
+margin-left: 50px;
+margin-right: 10px;
+}
+
+			
+					
+/*Specifying a class or an id for a tags in the regional area seemed to have intermitent problems in IE8*/
+/*This descendant style seems to work well*/
+/*This rule states that any a (link) tag inside of a paragraph with a class of p.p_tr-listing-region_info will use these rules */
+p.p_tr-listing-region_info a {
+}
+
+.h_tr-list-rating{
+margin-left:400px;
+}
+	
+/*On the trip report listing pages there are links to the trip report and pictures for a trip*/
+/*The inline-block property was used so these could work like a block (the br tag sets the text below the pic)*/
+/*But the spas function inline with eachother so they can occupy the same line */
+/*The inline-block property only works for elements that naturaly have an inline property by default.*/
+/*That is why a span was used instead of a div*/
+.span_tr-list-link{
+display:inline-block;
+text-align:center;
+margin-left: 0px;
+margin-right:70px;  /*offsets it from the pic links*/	
+}
+	
+.span_tr-pic-link	{
+display:inline-block;
+text-align:center;
+margin-left: 0px; 
+margin-right:15px;  /*spaces the various tr picture links from eachother if there are multiples*/
+}
+
+/*The next two classes (span_tr-map-icon  and  span_tr-map-links)  work together in one paragraph*/
+/*These space the map icon span from the map link span by setting inline block for both then setting text align and margins.*/
+.span_tr-map-icon{
+display:inline-block;
+text-align:center;
+margin-left: 0px; 
+margin-right:40px;
+}
+
+.span_tr-map-links{
+display:inline-block;
+text-align:left;
+margin-left: 10px;
+vertical-align:top;  /*Gets the text to start from the top of the span rather than align to the bottom.*/	
+}
+
+
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+/*                           These styles are for individual trip report pages                                   */
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+.h_Canyoneer-TR_Cannyon-name-rate-loc{
+text-align:center;
+}
+
+.div_tr-waypoint{
+padding: 7px;
+margin:12px;
+margin-left: 100px;
+border: 3px blue solid;
+}
+
+/*The new waypoint display meathod uses these CSS rules.  After all pages are updeated I will delete the rules for (.p_tr-waypoint-1 and .p_tr-waypoint-2) */
+.p_tr-waypoint{
+text-indent:-30px;
+margin:0px;
+margin-left:80px;
+margin-top:4px;
+margin-bottom:12px;
+padding-top:2px;
+}
+
+.p_tripreport_waypoint {
+padding: 7px;
+margin-left: 100px;
+border: 3px blue solid;
+}
+
+/*Styling of the paragraphs that contain trip report maps pics and text*/
+.indent_tripreport_map {
+margin-left: 100px;
+margin-bottom:40px;
+}
+
+.span_minimal_cyn_detail{
+	background-color:#9999FF;
+}
+
+
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+/*                           This section deals with contact page.                                               */
+/*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+div#contact_mailform{
+width:864px; margin:5px; padding:10px; border:3px;
+/*The width of the contact_mailform div is set to 900px wide to fill the page.*/
+}
+
+#tbx_LastName{
+width:200px;
+}
+
+#tbx_FirstName{
+width:200px;
+}
+
+#tbx_EmailAddress{
+width:200px;
+}
+
+#tbx_Subject{
+width:200px;
+}
+
+#ddl_Topic{
+width:200px;
+}
+
+#tbx_MessageSent{
+width:450px; height:125px
+}
+
+#tbx_EmailMessage{
+width:450px; height:125px
+}
